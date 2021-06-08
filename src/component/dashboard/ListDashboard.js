@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import * as _ from 'lodash'
 import callApi from '../../api/admin/Post'
-import styled from './styled-components-post'
+import styled from './styled-components-dashboard'
 
-export default function PostList ({match}) {
+export default function ListDashboard ({match}) {
     const [datas, setDatas] = useState()
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export default function PostList ({match}) {
                     {
                         _.map(datas, (i) => {
                             return (
-                                <styled.BoxChild greenColor key={i.id}>
+                                <styled.BoxChild color={i.id} key={i.id}>
                                     <img src={i.thumbail} alt='icon' />
                                     <h4>{i.name}</h4>
                                 </styled.BoxChild>

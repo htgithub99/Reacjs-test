@@ -1,10 +1,15 @@
-import PostList from "./component/post/PostList";
+import Dashboard from './component/dashboard/ListDashboard';
+import Collaborator from './component/collaborator/Collaborator'
 
 export const routes = [
     {
-        path: '/admin/post',
+        path: '/admin/dashboard',
         exact: true,
-        components: match => <PostList match={match}/>,
-        role: ''
+        components: match => <Dashboard match={match}/>,
+    },
+    {
+        path: '/admin/collaborator',
+        exact: true,
+        components: match => <Collaborator match={match} />
     }
 ]
