@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Button from '../Button'
+import Button from '../../../component/Button'
 
 const Action = styled.div`
     text-align: center; 

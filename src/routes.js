@@ -1,5 +1,5 @@
-import Dashboard from './component/dashboard/ListDashboard';
-import Collaborator from './component/collaborator/Collaborator'
+import Dashboard from './pages/admin/dashboard/Dashboard';
+import Collaborator from './pages/admin/collaborator/Collaborator'
 
 export const routes = [
     {

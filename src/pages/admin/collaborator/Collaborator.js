@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import LayoutInput from './LayoutInput'
 import LayoutTable from './LayoutTable'
 import LayoutButton from './LayoutButton'
-import Box from '../Box'
+import Box from '../../../component/Box'
 
 const BoxContent = styled.div`
     padding: 20px;

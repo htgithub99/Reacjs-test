@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import * as _ from 'lodash'
-import callApi from '../../api/admin/Post'
+import callApi from '../../../api/admin/Dashboard'
 import styled from './styled-components-dashboard'
 
-export default function ListDashboard ({match}) {
+export default function Dashboard ({match}) {
     const [datas, setDatas] = useState()
 
     useEffect(() => {

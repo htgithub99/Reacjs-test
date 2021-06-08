@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import * as _ from 'lodash'
-import Input from '../Input'
-import Label from '../Label'
+import Input from '../../../component/Input'
+import Label from '../../../component/Label'
 
 const InputFieldLeft = styled.div``
 const InputFieldRight = styled.div``

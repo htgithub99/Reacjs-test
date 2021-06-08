@@ -1,4 +1,4 @@
-import http from './../httpRequest'
+import http from '../httpRequest'
 
 const get = () => {
     return http.get(`post`)
