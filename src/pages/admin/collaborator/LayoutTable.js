@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import * as _ from 'lodash'
 
 const Span = styled.span `
     font-size: 10px;
@@ -7,17 +8,30 @@ const Span = styled.span `
     color: #8f9bb3;
     display: block;
 `
+
+const Button = styled.button`
+    color: #36f;
+    border-radius: 6px;
+    padding: 4px 10px;
+    background-color: #c7f0ff;
+    border: none;
+    &:focus {
+        outline: none;
+    }
+`
 const Table = styled.table`
+    border-collapse: collapse;  
     >thead {
         >tr {
+            background-color: #f2f9ff;
             >th {
                 font-size: 12px;
                 font-weight: bold;
                 line-height: 1.42;
                 text-align: left;
-                color: #707070;
+                color: #000000;
                 padding: 10px;
-                background-color: #f2f9ff;
+                text-align: center;
             }
         }
     }
@@ -29,12 +43,12 @@ const Table = styled.table`
                 line-height: 1.42;
                 text-align: left;
                 padding: 10px;
-                color: #000000;
+                color: #707070;
             }
         }
     }
 `
-export default function LayoutTable () {
+export default function LayoutTable ({collaborator}) {
     return (
         <Table>
             <thead>
@@ -46,27 +60,43 @@ export default function LayoutTable () {
                     <th>Người giới thiệu</th>
                     <th>Mã giới thiệu</th>
                     <th>Trạng thái</th>
+                    <th>Chọn người bảo trợ</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>BS198756</td>
-                    <td>
-                        Hoàng Văn K
-                        <Span>132299102</Span>
-                    </td>
-                    <td>
-                        Vietcombank - Chương dương
-                        <Span>0301000358315</Span>
-                    </td>
-                    <td>ctv@gmail.com</td>
-                    <td>
-                        Hoàng Công Minh
-                        <Span>BS65325</Span>
-                    </td>
-                    <td>BSC48169784</td>
-                    <td>Xác nhận</td>
-                </tr>
+                {
+                    _.map(collaborator, user => {
+                        return (
+                            <tr key={user.id}>
+                                <td>{user.id}</td>
+                                <td>
+                                    {user.name}
+                                    <Span>{user.identity_card_number}</Span>
+                                </td>
+                                <td>
+                                    {user.bank} - {user.bank_branch}
+                                    <Span>{user.account_number}</Span>
+                                </td>
+                                <td>{user.email}</td>
+                                <td>
+                                    Hoàng Công Minh
+                                    <Span>{user.code}</Span>
+                                </td>
+                                <td>{user.referral_code}</td>
+                                <td>
+                                    <Button>
+                                        {user.status === 1 ? 'Hãy xác nhận' : 'Xác nhận rồi'}
+                                    </Button>
+                                </td>
+                                <td>
+                                    <Button>
+                                        Bảo trợ
+                                    </Button>
+                                </td>
+                            </tr>
+                        )
+                    })
+                }
             </tbody>
         </Table>
     )

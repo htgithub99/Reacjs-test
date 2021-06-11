@@ -13,7 +13,7 @@ export default function Dashboard ({match}) {
                 setDatas(list_data.data.data)
             }
             catch (err) {
-                console.log('Get fail!')
+                console.log(`Get fail! ${err}`)
             }
             
         }
